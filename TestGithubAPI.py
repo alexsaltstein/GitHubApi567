@@ -7,8 +7,11 @@ class TestGithubAPI(unittest.TestCase):
         self.assertEqual(queryGithub('?'), [])
     def testGithubNone2(self):
         self.assertEqual(queryGithub('asaltste'), [])
-    def testGithubNone2(self):
+    def testGithubSelf(self):
         self.assertEqual(len(queryGithub('alexsaltstein')), 16)
+    def testNoId(self):
+        self.assertEqual(queryGithub(''), [])
+
 if __name__ == '__main__':
     print('Running unit tests')
     unittest.main()
